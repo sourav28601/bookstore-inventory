@@ -1,10 +1,11 @@
 const express = require('express');
-const mongoose = require('mongoose');
 const cors = require('cors');
 const swaggerUi = require('swagger-ui-express');
 const swaggerDocument = require('./swagger.json');
+const connectdb = require('./src/config/config');
 require('dotenv').config();
 
+connectdb();
 const apiRoutes = require('./src/routes/index.route');
 const errorHandler = require('./src/utils/error.handler');
 const app = express();
@@ -13,12 +14,6 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }))
-
-// Database connection
-mongoose.connect(process.env.MONGODB_URI)
-  .then(() => console.log('Connected to MongoDB'))
-  .catch(err => console.error('MongoDB connection error:', err));
-
 
 // Routes
 app.use("/api",apiRoutes);
