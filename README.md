@@ -2,6 +2,26 @@
 
 This API provides a set of endpoints to manage books and orders for a bookstore.
 
+## Initial Project Setup
+
+Follow these steps to set up and run the project locally:
+
+1. Clone the Repository
+   * `git clone https://github.com/sourav28601/bookstore-inventory.git`
+   * `cd bookstore-inventory`
+
+2. Install Dependencies
+   * Ensure that Node.js and npm are installed on your system
+   * Then run: `npm install`
+
+3. Run the Application
+   * Start the server with: `npm start`
+   * The API will be accessible at `http://localhost:3000`
+
+4. Swagger Documentation
+   * View the Swagger UI for API documentation at:
+   * `http://localhost:3000/api-docs/`
+  
 ### API Documentation
 
 The full API documentation can be found at:
